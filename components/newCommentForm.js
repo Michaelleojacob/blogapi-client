@@ -27,17 +27,20 @@ const SubmitComment = ({ id, updateComments }) => {
 
   return (
     <div className={styles.container}>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div>Leave a comment!</div>
         <label>
           title
           <input
             value={title}
+            className={styles.input}
             onChange={(e) => setTitle(e.target.value)}></input>
         </label>
         <label>
           comment
           <textarea
             value={body}
+            className={styles.input}
             onChange={(e) => setBody(e.target.value)}></textarea>
         </label>
         <button type='submit'>submit</button>
