@@ -4,4 +4,5 @@
   border: 1px solid black;
   padding: 0.25em;
   max-width: 300px;
+  cursor: pointer;
 }
