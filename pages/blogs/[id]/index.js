@@ -36,7 +36,7 @@ const Blog = () => {
 
   return (
     <>
-      <SingleBlog blog={blog} />
+      {isReady && blog !== null ? <SingleBlog blog={blog} /> : ''}
       {isReady && comments !== null
         ? comments.map((comment) => (
             <Comment comment={comment} key={comment._id} />

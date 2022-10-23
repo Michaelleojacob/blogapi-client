@@ -9,13 +9,20 @@
 // }
 
 const SingleBlog = ({ blog }) => {
+  console.log(blog);
+  const date = new Date(blog.date).toLocaleDateString('en-us', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
   return (
     <>
       <div>{blog.title}</div>
       <div>{blog.body}</div>
       ___
       <div>{blog.author}</div>
-      <div>{blog.date}</div>
+      <div>{date}</div>
     </>
   );
 };
