@@ -3,25 +3,26 @@ import { useEffect, useState } from 'react';
 import SubmitComment from '../../../components/newCommentForm';
 import Comment from '../../../components/comments';
 import SingleBlog from '../../../components/blog';
+import Head from 'next/head';
+import styles from '../../../styles/blogs/single_blog.module.css';
 
 const Blog = () => {
   const [blog, setBlog] = useState(null);
   const [comments, setComments] = useState(null);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [id, setId] = useState(null);
 
   const router = useRouter();
   const { query, isReady } = router;
 
   const fetchBlogAndComments = async () => {
-    setLoading(true);
+    // setLoading(true);
     const { id } = query;
     const rawData = await fetch(`http://localhost:3009/blog/${id}`);
     const data = await rawData.json();
-    console.log(data);
     setBlog(data[0]);
     setComments(data[1]);
-    setLoading(false);
+    // setLoading(false);
   };
 
   const updateComments = async (newComments) => setComments(newComments);
@@ -35,7 +36,12 @@ const Blog = () => {
   }, [isReady]);
 
   return (
-    <>
+    <div className={styles.container}>
+      <Head>
+        <title>michaelleojacob.single_blog</title>
+        <meta name='description' content='blogapi.single_blog' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       {isReady && blog !== null ? <SingleBlog blog={blog} /> : ''}
       {isReady && comments !== null
         ? comments.map((comment) => (
@@ -43,7 +49,7 @@ const Blog = () => {
           ))
         : ''}
       {isReady ? <SubmitComment id={id} updateComments={updateComments} /> : ''}
-    </>
+    </div>
   );
 };
 

@@ -35,7 +35,9 @@ const SubmitComment = ({ id, updateComments }) => {
         </label>
         <label>
           comment
-          <input value={body} onChange={(e) => setBody(e.target.value)}></input>
+          <textarea
+            value={body}
+            onChange={(e) => setBody(e.target.value)}></textarea>
         </label>
         <button type='submit'>submit</button>
       </form>
