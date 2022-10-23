@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from '../styles/comments/newComment.module.css';
 
 const SubmitComment = ({ id, updateComments }) => {
   const [title, setTitle] = useState('');
@@ -25,7 +26,7 @@ const SubmitComment = ({ id, updateComments }) => {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <form onSubmit={handleSubmit}>
         <label>
           title
@@ -41,7 +42,7 @@ const SubmitComment = ({ id, updateComments }) => {
         </label>
         <button type='submit'>submit</button>
       </form>
-    </>
+    </div>
   );
 };
 
