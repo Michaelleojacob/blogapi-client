@@ -1,4 +1,5 @@
 import styles from '../styles/blogs/card.module.css';
+import Link from 'next/link';
 
 // {
 //   "_id": "63532a4d919aadef64a7666e",
@@ -21,11 +22,13 @@ const BlogCard = ({ blog }) => {
     console.log(blog._id.toString());
   };
   return (
-    <div className={styles.container} onClick={handleClick}>
-      <div>{blog.title}</div>
-      <div>{blog.author}</div>
-      <div>{date}</div>
-    </div>
+    <Link href={`/blogs/${blog._id.toString()}`}>
+      <div className={styles.container} onClick={handleClick}>
+        <div>{blog.title}</div>
+        <div>{blog.author}</div>
+        <div>{date}</div>
+      </div>
+    </Link>
   );
 };
 
