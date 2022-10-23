@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState(null);
-  // const [comments, setComments] = useState(null);
 
   const fetchBlogs = async () => {
     const rawData = await fetch('http://localhost:3009');

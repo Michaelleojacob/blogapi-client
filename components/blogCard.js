@@ -19,15 +19,17 @@ const BlogCard = ({ blog }) => {
     day: 'numeric',
   });
   const handleClick = (e) => {
-    console.log(blog._id.toString());
+    // console.log(blog._id.toString());
   };
   return (
     <Link href={`/blogs/${blog._id.toString()}`}>
-      <div className={styles.container} onClick={handleClick}>
-        <div>{blog.title}</div>
-        <div>{blog.author}</div>
-        <div>{date}</div>
-      </div>
+      <a>
+        <div className={styles.container} onClick={handleClick}>
+          <div>{blog.title}</div>
+          <div>{blog.author}</div>
+          <div>{date}</div>
+        </div>
+      </a>
     </Link>
   );
 };
