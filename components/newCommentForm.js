@@ -9,7 +9,7 @@ const SubmitComment = ({ id, updateComments }) => {
     e.preventDefault();
     const data = { title, body, id };
     const rawResponse = await fetch(
-      `http://localhost:3009/blog/${id}/newComment`,
+      `https://blog-api-server.onrender.com/blog/${id}/newComment`,
       {
         method: 'POST',
         headers: {

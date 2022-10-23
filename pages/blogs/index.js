@@ -7,7 +7,7 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState(null);
 
   const fetchBlogs = async () => {
-    const rawData = await fetch('http://localhost:3009');
+    const rawData = await fetch('https://blog-api-server.onrender.com');
     const data = await rawData.json();
     return setBlogs(data);
   };

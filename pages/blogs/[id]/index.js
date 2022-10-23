@@ -18,7 +18,9 @@ const Blog = () => {
   const fetchBlogAndComments = async () => {
     // setLoading(true);
     const { id } = query;
-    const rawData = await fetch(`http://localhost:3009/blog/${id}`);
+    const rawData = await fetch(
+      `https://blog-api-server.onrender.com/blog/${id}`
+    );
     const data = await rawData.json();
     setBlog(data[0]);
     setComments(data[1]);
