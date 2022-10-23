@@ -1,5 +1,6 @@
 import styles from '../styles/blogs/card.module.css';
 import Link from 'next/link';
+import formatDate from '../utils/formatDate';
 
 // {
 //   "_id": "63532a4d919aadef64a7666e",
@@ -12,12 +13,7 @@ import Link from 'next/link';
 // }
 
 const BlogCard = ({ blog }) => {
-  const date = new Date(blog.date).toLocaleDateString('en-us', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
+  const date = formatDate(blog.date);
   const handleClick = (e) => {
     // console.log(blog._id.toString());
   };

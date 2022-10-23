@@ -1,3 +1,5 @@
+import formatDate from '../utils/formatDate';
+
 // {
 //   "_id": "6353883232a2353f176a6b85",
 //   "blogId": "63532a4d919aadef64a76669",
@@ -8,12 +10,7 @@
 // }
 
 const Comment = ({ comment }) => {
-  const date = new Date(comment.date).toLocaleDateString('en-us', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
+  const date = formatDate(comment.date);
   return (
     <>
       <div>{comment.title}</div>

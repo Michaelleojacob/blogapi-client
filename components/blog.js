@@ -1,3 +1,5 @@
+import formatDate from '../utils/formatDate';
+
 // {
 //   "_id": "63532a4d919aadef64a76669",
 //   "title": "one",
@@ -10,17 +12,11 @@
 
 const SingleBlog = ({ blog }) => {
   console.log(blog);
-  const date = new Date(blog.date).toLocaleDateString('en-us', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
+  const date = formatDate(blog.date);
   return (
     <>
       <div>{blog.title}</div>
       <div>{blog.body}</div>
-      ___
       <div>{blog.author}</div>
       <div>{date}</div>
     </>
