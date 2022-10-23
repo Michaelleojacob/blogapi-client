@@ -14,13 +14,11 @@ import formatDate from '../utils/formatDate';
 
 const BlogCard = ({ blog }) => {
   const date = formatDate(blog.date);
-  const handleClick = (e) => {
-    // console.log(blog._id.toString());
-  };
+
   return (
     <Link href={`/blogs/${blog._id.toString()}`}>
       <a>
-        <div className={styles.container} onClick={handleClick}>
+        <div className={styles.container}>
           <div>{blog.title}</div>
           <div>{blog.author}</div>
           <div>{date}</div>
